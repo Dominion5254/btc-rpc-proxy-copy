@@ -24,7 +24,7 @@ jobs:
         run: echo "IMAGE_ID=ghcr.io/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}" | tr '[A-Z]' '[a-z]' >> $GITHUB_ENV
       - name: Debug IMAGE_ID
         run: |
-          echo "IMAGE_ID: $IMAGE_ID"
+          echo "IMAGE_ID: ${{ env.IMAGE_ID }}"
       - name: Build image
         run: docker buildx build . --platform linux/amd64,linux/arm64 --tag ${{ env.IMAGE_ID }} --label "runnumber=${GITHUB_RUN_ID}" --push
       - name: Log in to registry
