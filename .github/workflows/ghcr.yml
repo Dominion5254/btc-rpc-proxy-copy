@@ -29,8 +29,6 @@ jobs:
           [ "$VERSION" == "master" ] && VERSION=latest
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
-      - name: Debug IMAGE_ID
-        run: |
           echo "IMAGE_ID: $IMAGE_ID"
           echo "VERSION: $VERSION"
       - name: Build image
